@@ -738,3 +738,82 @@ Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:5
 
 
 Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:39 +0545
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:40 +0545
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 92ms (Views: 91.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:59:42 +0545
