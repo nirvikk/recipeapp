@@ -464,3 +464,277 @@ Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:
 
 
 Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:41:03 +0545
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RiW39yS+/gIFnuEgnctbXg1h7YcXxlD7YR+ThE97fdsP3FapBoDcrYsrEvJf+Xvr/l+SdnF8CX/mnk30p4CoLw==", "recipe"=>{"title"=>"Mo: Mo:", "description"=>"Mo: Mo: is undoubtedly the most loved fast food in Nepal.", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa781b7b7d8 @tempfile=#<Tempfile:/tmp/RackMultipart20151008-5310-151kp85.jpg>, @original_filename="momo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[image]\"; filename=\"momo.jpg\"\r\nContent-Type: image/jpeg\r\n">, "ingredients_attributes"=>{"1444323854845"=>{"name"=>"Flour", "_destroy"=>"false"}, "1444323854853"=>{"name"=>"Keema", "_destroy"=>"false"}, "1444323864708"=>{"name"=>"Salt, turmeric, pepper, etc.", "_destroy"=>"false"}, "1444323864712"=>{"name"=>"Oil", "_destroy"=>"false"}}, "directions_attributes"=>{"1444323887450"=>{"step"=>"मैदा मा पानी र घ्यु हालेर मुछ्नुस", "_destroy"=>"false"}, "1444323887454"=>{"step"=>"मुछेको मैदा बेल्नुस", "_destroy"=>"false"}, "1444323939300"=>{"step"=>"मैदा भित्र मासु हाल्नुस", "_destroy"=>"false"}, "1444323939303"=>{"step"=>"", "_destroy"=>"false"}}}, "commit"=>"Create Recipe"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Command :: file -b --mime '/tmp/06c56a89949d617def52f371c357b6db20151008-5310-cp92b6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/06c56a89949d617def52f371c357b6db20151008-5310-gcek1n.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/06c56a89949d617def52f371c357b6db20151008-5310-gcek1n.jpg[0]'
+Command :: convert '/tmp/06c56a89949d617def52f371c357b6db20151008-5310-gcek1n.jpg[0]' -auto-orient -resize "400x" -crop "400x400+0+4" +repage '/tmp/ba3719557cfdc29531ec5512b806fa5d20151008-5310-1nc98xp'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/06c56a89949d617def52f371c357b6db20151008-5310-2p9vcr.jpg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("title", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Mo: Mo:"], ["description", "Mo: Mo: is undoubtedly the most loved fast food in Nepal."], ["image_file_name", "momo.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 35829], ["image_updated_at", "2015-10-08 17:05:59.047749"], ["user_id", 1], ["created_at", "2015-10-08 17:05:59.661239"], ["updated_at", "2015-10-08 17:05:59.661239"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Flour"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.663266"], ["updated_at", "2015-10-08 17:05:59.663266"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Keema"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.664374"], ["updated_at", "2015-10-08 17:05:59.664374"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Salt, turmeric, pepper, etc."], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.665261"], ["updated_at", "2015-10-08 17:05:59.665261"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Oil"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.666100"], ["updated_at", "2015-10-08 17:05:59.666100"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "directions" ("step", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["step", "मैदा मा पानी र घ्यु हालेर मुछ्नुस"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.666877"], ["updated_at", "2015-10-08 17:05:59.666877"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "directions" ("step", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["step", "मुछेको मैदा बेल्नुस"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.667740"], ["updated_at", "2015-10-08 17:05:59.667740"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "directions" ("step", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["step", "मैदा भित्र मासु हाल्नुस"], ["recipe_id", 1], ["created_at", "2015-10-08 17:05:59.668421"], ["updated_at", "2015-10-08 17:05:59.668421"]]
+  [1m[35m (65.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 697ms (ActiveRecord: 66.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 115ms (Views: 111.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/recipes.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:50:59 +0545
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mIngredient Load (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 1]]
+  [1m[36mDirection Load (0.0ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/recipes.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:23 +0545
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/_ingredient_fields.html.haml (2.3ms)
+  Rendered recipes/_direction_fields.html.haml (2.1ms)
+  Rendered recipes/_form.html.haml (72.2ms)
+  Rendered recipes/new.html.haml within layouts/application (73.0ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:28 +0545
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+tNHmDbGnmfe/j8pVFBfVhF+z00yl29m0J927HiZP1azKqbGFPi8yFBLzPuWYn/j4kCwvFQtNuJXHqickGLqog=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/recipes.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:30 +0545
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-08 22:51:32 +0545
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/recipes.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/application.self.css?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:33 +0545
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[35mDirection Load (0.0ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 1]]
+  Rendered recipes/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:36 +0545
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-10-08 22:51:45 +0545
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:46 +0545
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/assets/cocoon.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/assets/application.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/assets/recipes.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/assets/turbolinks.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 127.0.0.1 at 2015-10-08 22:51:47 +0545
